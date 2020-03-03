@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--表示在mybatis逆向工程是不需要添加注释-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!--配置数据库连接-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/ssm_crud"
+                        userId="root"
+                        password="ly9781"/>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--指定javaBean生成位置: .\src\main\java-->
+        <javaModelGenerator targetPackage="cn.blue.bean" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--指定sql映射文件生成的位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <!--指定接口生成的位置,比如mapper接口-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.blue.dao" targetProject="src/main/java"/>
+
+        <!--table表,指定每个表生成策略-->
+        <table tableName="tbl_emp" domainObjectName="Employee"/>
+        <table tableName="tbl_dept" domainObjectName="Department"/>
+    </context>
+</generatorConfiguration>
