@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.3.7.RELEASE</version>
+            <version>5.3.18</version>
         </dependency>
         <!--spring提供对事务的支持，事务的相关处理以及实现类就在这个Jar包中-->
         <dependency>
